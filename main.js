@@ -10,7 +10,12 @@ var userIdeas = [];
 
 // event listeners
 
-saveButton.addEventListener('click', saveUserInput);
+saveButton.addEventListener('click', function() {
+  if(titleInput.value && bodyInput.value) {
+    saveUserInput();
+  }
+   
+});
 
 // functions
 
@@ -27,4 +32,5 @@ function createUserObject(titleInput, bodyInput) {
     id: Date.now(),
     }
 }
+
 
