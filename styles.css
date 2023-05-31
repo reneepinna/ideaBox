@@ -1,0 +1,14 @@
+/* Colors:
+Dark Purple: #1F1F3C
+Medium Purple: #A8AAD2
+Light Purple: #EAEAF4
+White: #FFFFFF */
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
