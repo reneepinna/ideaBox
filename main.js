@@ -1,36 +1,32 @@
+// query selectors
+
 var titleInput = document.querySelector('#title')
 
 var bodyInput = document.querySelector('#body');
 
 var saveButton = document.querySelector('.save-button');
 
-var userTitles = [];
-var userBodies = [];
+// global variables
 
-console.log(titleInput.value);
+var userIdeas = [];
 
 // event listeners
 
 saveButton.addEventListener('click', saveUserInput);
 
-
-
 // functions
 
 function saveUserInput() {
-   
-    
-    userTitles.push(titleInput.value);
-    userBodies.push(bodyInput.value);
-    console.log(userBodies, userTitles)
+    var newUserIdea = createUserObject(titleInput.value, bodyInput.value)
+    userIdeas.push(newUserIdea);
+    console.log(userIdeas);
 }
 
-// function createUserObject(titleInput, bodyInput) {
-//     console.log(bodyInput);
-    
-//     var currentIdeaObject = {
-//     title: titleInput,
-//     body: bodyInput,
-//     id: Date.now(),
-//     }
-// }
+function createUserObject(titleInput, bodyInput) {
+    return {
+    title: titleInput,
+    body: bodyInput,
+    id: Date.now(),
+    }
+}
+
