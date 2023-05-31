@@ -37,18 +37,54 @@ section {
 }
 
 .top-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
     background-color: #A8AAD2;
-    height: 50%;
+    height: 45%;
     width: 100%;
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+.body-input {
+    margin-top: 2vh;
+}
+
+input {
+    margin-right: 20vh;
+    margin-left: 1vh;
+    border: #1F1F3C solid 3px;
+    height: 7vh;
+    width: 110vh;   
+}
+
+label {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+#body {
+    height: 12vh;
 }
 
 .bottom-box {
     background-color: #EAEAF4;
-    height: 50%;
+    height: 55%;
     width: 100%;
 }
 
 .save-button {
+    margin-right: 20vh;
+    height: 10vh;
+    width: 110vh;
+    border-width: 0px;
+    font-weight: 400;
+    font-size: 4vh;
     background-color: #1F1F3C;
-    color: #A8AAD2;
+    color: #EAEAF4;
 }
