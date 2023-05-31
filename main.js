@@ -1,9 +1,7 @@
 // query selectors
 
-var titleInput = document.querySelector('#title')
-
+var titleInput = document.querySelector('#title');
 var bodyInput = document.querySelector('#body');
-
 var saveButton = document.querySelector('.save-button');
 
 // global variables
@@ -17,7 +15,7 @@ saveButton.addEventListener('click', saveUserInput);
 // functions
 
 function saveUserInput() {
-    var newUserIdea = createUserObject(titleInput.value, bodyInput.value)
+    var newUserIdea = createUserObject(titleInput.value, bodyInput.value);
     userIdeas.push(newUserIdea);
     console.log(userIdeas);
 }
