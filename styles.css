@@ -17,14 +17,23 @@ main {
 }
 
 aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #1F1F3C;
-    width: 30%;
+    width: 20%;
+}
+
+h1 {
+    color:#EAEAF4;
+    font-size:8vh;
+    margin-top: 2vh;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
 }
 
 .top-box {
