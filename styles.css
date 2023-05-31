@@ -12,3 +12,19 @@ main {
     display: flex;
     flex-direction: row;
 }
+
+aside {
+    background-color: #1F1F3C;
+}
+
+section {
+    display: flex;
+}
+
+.top-box {
+    background-color: #A8AAD2;
+}
+
+.bottom-box {
+    background-color: #EAEAF4;
+}
