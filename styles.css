@@ -6,25 +6,40 @@ White: #FFFFFF */
 
 * {
     font-family: 'Poppins', sans-serif;
+    margin: 0px;
 }
 
 main {
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
 }
 
 aside {
     background-color: #1F1F3C;
+    width: 30%;
 }
 
 section {
     display: flex;
+    flex-direction: column;
+    width: 70%;
 }
 
 .top-box {
     background-color: #A8AAD2;
+    height: 50%;
+    width: 100%;
 }
 
 .bottom-box {
     background-color: #EAEAF4;
+    height: 50%;
+    width: 100%;
+}
+
+.save-button {
+    background-color: #1F1F3C;
+    color: #A8AAD2;
 }
