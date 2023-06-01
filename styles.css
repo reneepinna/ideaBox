@@ -88,3 +88,8 @@ label {
     background-color: #1F1F3C;
     color: #EAEAF4;
 }
+
+.inputs-filled {
+  background-color: green;
+  cursor: pointer;
+}
