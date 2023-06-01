@@ -42,4 +42,10 @@ function addUserIdeaCard(){
             <h2>${userIdeas[i].title}</h2>
             <h4>${userIdeas[i].body}</h4></article>`
     }
+    clearUserInput()
+}
+
+function clearUserInput(){
+    titleInput.value ='';
+    bodyInput.value='';
 }
