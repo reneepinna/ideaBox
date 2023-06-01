@@ -13,10 +13,9 @@ var userIdeas = [];
 
 // event listeners
 
-saveButton.addEventListener('click', function (event){
+saveButton.addEventListener('click', function(event){
     saveUserInput(event);
-
-    
+    addUserIdeaCard(event);
 });
 
 // functions
@@ -36,9 +35,11 @@ function createUserObject(titleInput, bodyInput) {
 }
 
 function addUserIdeaCard(){
-    ideaGrid.inerHTML = '';
-    for (var i = 0; i < userIdeas; i++) {
+    ideaGrid.innerHTML = '';
+    for (var i = 0; i < userIdeas.length; i++) {
         ideaGrid.innerHTML +=
-
+            `<article class='user-idea-card' id='${userIdeas[i].id}'>
+            <h2>${userIdeas[i].title}</h2>
+            <h4>${userIdeas[i].body}</h4></article>`
     }
 }
