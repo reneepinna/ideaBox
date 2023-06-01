@@ -34,6 +34,11 @@ function createUserObject(titleInput, bodyInput) {
     }
 }
 
+function clearUserInput(){
+    titleInput.value ='';
+    bodyInput.value='';
+}
+
 function addUserIdeaCard(){
     ideaGrid.innerHTML = '';
     for (var i = 0; i < userIdeas.length; i++) {
@@ -45,7 +50,3 @@ function addUserIdeaCard(){
     clearUserInput()
 }
 
-function clearUserInput(){
-    titleInput.value ='';
-    bodyInput.value='';
-}

@@ -79,6 +79,7 @@ label {
     /* display: flex;
     justify-content: space-between; */
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .user-ideas-grid{
@@ -94,6 +95,8 @@ label {
     height: 290px;
     padding: 25px;
     width: 250px;
+    /* display: flex;
+    flex-direction: column; */
   }
 
   .user-idea-card h2,
@@ -101,14 +104,17 @@ label {
   color: #1F1F3C;
   line-height: 1;
   width: 90%;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
 }
 
 .user-idea-card h2 {
-  font-size: 30px;
-  font-weight: normal;
-  letter-spacing: 5px;
+  /* font-size: 30px; */
+  font-weight: 500;
+  /* letter-spacing: 5px; */
   margin-bottom: 10px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .save-button {
