@@ -5,6 +5,7 @@ var titleInput = document.querySelector('#title')
 var bodyInput = document.querySelector('#body');
 
 var saveButton = document.querySelector('.save-button');
+var ideaGrid = document.querySelector('.user-ideas-grid');
 
 // global variables
 
@@ -12,7 +13,11 @@ var userIdeas = [];
 
 // event listeners
 
-saveButton.addEventListener('click', saveUserInput);
+saveButton.addEventListener('click', function (event){
+    saveUserInput(event);
+
+    
+});
 
 // functions
 
@@ -30,3 +35,10 @@ function createUserObject(titleInput, bodyInput) {
     }
 }
 
+function addUserIdeaCard(){
+    ideaGrid.inerHTML = '';
+    for (var i = 0; i < userIdeas; i++) {
+        ideaGrid.innerHTML +=
+
+    }
+}

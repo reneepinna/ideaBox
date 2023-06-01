@@ -84,6 +84,28 @@ label {
     grid-gap: 20px;
     padding: 20px;
 }
+.user-idea-card {
+    background: black;
+    color: white;
+    height: 340px;
+    padding: 25px;
+    width: 425px;
+  }
+
+  .user-idea-card h2,
+  .user-idea-card h4 {
+  color: white;
+  line-height: 1;
+  width: 90%;
+}
+
+.user-idea-card h2 {
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 
 .save-button {
     margin-right: 20vh;
