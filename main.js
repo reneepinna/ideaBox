@@ -3,6 +3,7 @@
 var titleInput = document.querySelector('#title');
 var bodyInput = document.querySelector('#body');
 var saveButton = document.querySelector('.save-button');
+var ideaGrid = document.querySelector('.user-ideas-grid');
 
 // global variables
 
@@ -10,9 +11,10 @@ var userIdeas = [];
 
 // event listeners
 
-saveButton.addEventListener('click', function() {
+saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
-    saveUserInput();
+    saveUserInput(event);
+    addUserIdeaCard(event);
   }
 
 });
@@ -33,6 +35,22 @@ function createUserObject(titleInput, bodyInput) {
     body: bodyInput,
     id: Date.now(),
     }
+}
+
+function clearUserInput(){
+    titleInput.value ='';
+    bodyInput.value='';
+}
+
+function addUserIdeaCard(){
+    ideaGrid.innerHTML = '';
+    for (var i = 0; i < userIdeas.length; i++) {
+        ideaGrid.innerHTML +=
+            `<article class='user-idea-card' id='${userIdeas[i].id}'>
+            <h2>${userIdeas[i].title}</h2>
+            <h4>${userIdeas[i].body}</h4></article>`
+    }
+    clearUserInput()
 }
 
 function changeColorIfInputsFilled() {

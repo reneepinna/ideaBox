@@ -76,6 +76,45 @@ label {
     background-color: #EAEAF4;
     height: 55%;
     width: 100%;
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 20px;
+    /* overflow-y: scroll; */
+}
+
+.user-ideas-grid{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+.user-idea-card {
+    background: #FFFFFF;
+    color: #1F1F3C;
+    border: #1F1F3C solid 3px;
+    height: 290px;
+    padding: 25px;
+    width: 250px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+
+  .user-idea-card h2,
+  .user-idea-card h4 {
+  color: #1F1F3C;
+  line-height: 1;
+  width: 90%;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.user-idea-card h2 {
+  /* font-size: 30px; */
+  font-weight: 500;
+  /* letter-spacing: 5px; */
+  margin-bottom: 10px;
+  /* text-transform: uppercase; */
 }
 
 .save-button {
