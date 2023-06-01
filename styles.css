@@ -79,7 +79,7 @@ label {
     /* display: flex;
     justify-content: space-between; */
     padding: 20px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .user-ideas-grid{
