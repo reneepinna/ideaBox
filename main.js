@@ -24,6 +24,8 @@ titleInput.addEventListener('keyup', toggleSaveButtonState);
 ideaGrid.addEventListener('click', function(event) {
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event) 
+  }else if (event.target.className === 'favorite-button') {
+    favoriteUserIdeaCard(event)
   }
 }) 
 
@@ -31,6 +33,8 @@ ideaGrid.addEventListener('click', function(event) {
 
 
 // functions
+
+
 
 function deleteUserIdeaCard(event) {
   for(var i = 0; i < userIdeas.length; i++) {
@@ -54,6 +58,7 @@ function createUserObject(titleInput, bodyInput) {
     title: titleInput,
     body: bodyInput,
     id: Date.now(),
+    isFavorite: false,
     }
 }
 
