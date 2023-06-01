@@ -16,15 +16,10 @@ saveButton.addEventListener('click', function() {
   }
 
 });
+bodyInput.addEventListener('keyup', changeColorIfInputsFilled)
 
-titleInput.addEventListener('keyup', function() {
-  if (titleInput.value && bodyInput.value) {
-    saveButton.style.background = "green";
-  } else {
-    saveButton.style.background = "#1F1F3C"
-  }
-
-})
+titleInput.addEventListener('keyup', changeColorIfInputsFilled)
+  
 
 // functions
 
@@ -42,8 +37,11 @@ function createUserObject(titleInput, bodyInput) {
     }
 }
 
-//need to create a function to change the color of the button
-//function should have an if statement
-// give input field ID in html
-//document.getElementById(idgoeshere).value !==""
+function changeColorIfInputsFilled() {
+  if (titleInput.value && bodyInput.value) {
+    saveButton.style.background = "green";
+  } else {
+    saveButton.style.background = "#1F1F3C"
+  }
 
+}
