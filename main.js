@@ -20,14 +20,33 @@ saveButton.addEventListener('click', function(event) {
 });
 bodyInput.addEventListener('keyup', changeColorIfInputsFilled);
 titleInput.addEventListener('keyup', changeColorIfInputsFilled);
+ideaGrid.addEventListener('click', function(event) {
+  if (event.target.className === 'delete-button') {
+    deleteUserIdeaCard(event) 
+  }
+}) 
+
+  
+
 
 // functions
+
+function deleteUserIdeaCard(event) {
+  for(var i = 0; i < userIdeas.length; i++) {
+    if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
+      userIdeas.splice(i, 1);
+    } 
+    console.log(event.target.closet('.user-idea-card').id)
+  }
+  addUserIdeaCard();
+}
 
 function saveUserInput() {
     var newUserIdea = createUserObject(titleInput.value, bodyInput.value);
     userIdeas.push(newUserIdea);
-    console.log(userIdeas);
+    console.log(userIdeas); 
 }
+
 
 function createUserObject(titleInput, bodyInput) {
     return {
@@ -43,14 +62,15 @@ function clearUserInput(){
 }
 
 function addUserIdeaCard(){
-    ideaGrid.innerHTML = '';
+  ideaGrid.innerHTML = '';
     for (var i = 0; i < userIdeas.length; i++) {
         ideaGrid.innerHTML +=
             `<article class='user-idea-card' id='${userIdeas[i].id}'>
+            <header><button class="delete-button">Delete</button></header>
             <h2>${userIdeas[i].title}</h2>
             <h4>${userIdeas[i].body}</h4></article>`
     }
-    clearUserInput()
+     clearUserInput()
 }
 
 function changeColorIfInputsFilled() {
