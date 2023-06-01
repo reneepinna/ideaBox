@@ -34,7 +34,15 @@ ideaGrid.addEventListener('click', function(event) {
 
 // functions
 
-
+function favoriteUserIdeaCard(event) {
+ for (var i = 0; i < userIdeas.length; i++) {
+  if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
+    userIdeas[i].isFavorite = true;
+    event.target.closest('.user-idea-card').classList.toggle('.favorite');
+    console.log(userIdeas[i])
+    }
+  }
+}
 
 function deleteUserIdeaCard(event) {
   for(var i = 0; i < userIdeas.length; i++) {
