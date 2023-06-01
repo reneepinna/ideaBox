@@ -15,11 +15,12 @@ saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
     addUserIdeaCard(event);
+    toggleSaveButtonState();
   }
 
 });
-bodyInput.addEventListener('keyup', changeColorIfInputsFilled);
-titleInput.addEventListener('keyup', changeColorIfInputsFilled);
+bodyInput.addEventListener('keyup', toggleSaveButtonState);
+titleInput.addEventListener('keyup', toggleSaveButtonState);
 ideaGrid.addEventListener('click', function(event) {
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event) 
@@ -73,12 +74,10 @@ function addUserIdeaCard(){
      clearUserInput()
 }
 
-function changeColorIfInputsFilled() {
+function toggleSaveButtonState() {
   if (titleInput.value && bodyInput.value) {
     saveButton.classList.add("inputs-filled");
   } else {
     saveButton.classList.remove('inputs-filled');
   }
 }
-
- 
