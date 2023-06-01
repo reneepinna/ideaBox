@@ -1,9 +1,7 @@
 // query selectors
 
-var titleInput = document.querySelector('#title')
-
+var titleInput = document.querySelector('#title');
 var bodyInput = document.querySelector('#body');
-
 var saveButton = document.querySelector('.save-button');
 var ideaGrid = document.querySelector('.user-ideas-grid');
 
@@ -13,15 +11,20 @@ var userIdeas = [];
 
 // event listeners
 
-saveButton.addEventListener('click', function(event){
+saveButton.addEventListener('click', function(event) {
+  if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
     addUserIdeaCard(event);
+  }
+
 });
+bodyInput.addEventListener('keyup', changeColorIfInputsFilled);
+titleInput.addEventListener('keyup', changeColorIfInputsFilled);
 
 // functions
 
 function saveUserInput() {
-    var newUserIdea = createUserObject(titleInput.value, bodyInput.value)
+    var newUserIdea = createUserObject(titleInput.value, bodyInput.value);
     userIdeas.push(newUserIdea);
     console.log(userIdeas);
 }
@@ -50,3 +53,12 @@ function addUserIdeaCard(){
     clearUserInput()
 }
 
+function changeColorIfInputsFilled() {
+  if (titleInput.value && bodyInput.value) {
+    saveButton.classList.add("inputs-filled");
+  } else {
+    saveButton.classList.remove('inputs-filled');
+  }
+}
+
+ 
