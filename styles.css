@@ -76,6 +76,9 @@ label {
     background-color: #EAEAF4;
     height: 55%;
     width: 100%;
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 20px;
 }
 
 .user-ideas-grid{
@@ -85,16 +88,17 @@ label {
     padding: 20px;
 }
 .user-idea-card {
-    background: black;
-    color: white;
-    height: 340px;
+    background: #FFFFFF;
+    color: #1F1F3C;
+    border: #1F1F3C solid 3px;
+    height: 290px;
     padding: 25px;
-    width: 425px;
+    width: 250px;
   }
 
   .user-idea-card h2,
   .user-idea-card h4 {
-  color: white;
+  color: #1F1F3C;
   line-height: 1;
   width: 90%;
 }
