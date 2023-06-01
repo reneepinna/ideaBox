@@ -37,7 +37,7 @@ function deleteUserIdeaCard(event) {
     if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
       userIdeas.splice(i, 1);
     } 
-    console.log(event.target.closet('.user-idea-card').id)
+    console.log(event.target.closest('.user-idea-card').id)
   }
   addUserIdeaCard();
 }
@@ -67,7 +67,10 @@ function addUserIdeaCard(){
     for (var i = 0; i < userIdeas.length; i++) {
         ideaGrid.innerHTML +=
             `<article class='user-idea-card' id='${userIdeas[i].id}'>
-            <header><button class="delete-button">Delete</button></header>
+            <header>
+              <button class="favorite-button">star</button>
+              <button class="delete-button">Delete</button>
+            </header>
             <h2>${userIdeas[i].title}</h2>
             <h4>${userIdeas[i].body}</h4></article>`
     }
