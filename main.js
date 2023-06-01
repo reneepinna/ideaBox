@@ -19,7 +19,12 @@ saveButton.addEventListener('click', function() {
 bodyInput.addEventListener('keyup', changeColorIfInputsFilled)
 
 titleInput.addEventListener('keyup', changeColorIfInputsFilled)
-  
+
+// saveButton.addEventListener("mouseover", function() {
+// //  if (titleInput.value &&)
+//  saveButton.style.cursor = "pointer"
+// })
+
 
 // functions
 
@@ -39,9 +44,16 @@ function createUserObject(titleInput, bodyInput) {
 
 function changeColorIfInputsFilled() {
   if (titleInput.value && bodyInput.value) {
-    saveButton.style.background = "green";
+    saveButton.classList.add("inputs-filled")
   } else {
-    saveButton.style.background = "#1F1F3C"
+    saveButton.classList.remove('inputs-filled')
   }
-
 }
+
+//create mouseover event
+// when the titlInput.value and bodyInput.value are empty the mouse will be
+
+
+//if titleInput.value and bodyInput.value are filled the mouse will be a pointer
+
+ 
