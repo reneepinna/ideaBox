@@ -91,9 +91,12 @@ label {
 }
 
 header{
-  display:block;
+  display:flex;
   background-color: #1F1F3C;
   height: 6.3vh;
+ 
+
+  overflow: hidden;
 }
 
 .user-idea-card {
@@ -153,8 +156,17 @@ header{
 }
 
 .active {
-  background-image: url("assets/star-active.svg")
+  background-image: url("assets/star-active.svg");
+}
 
-
- 
+.delete-button {
+  border: 0;
+  background-image: url("assets/delete.svg");
+  margin-left: 130px;
+  height: 90px;
+  width: 70px; 
+  margin-bottom: 25px;
+  background-color:#1F1F3C;
+  
+  
 }
