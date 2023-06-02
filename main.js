@@ -24,6 +24,8 @@ titleInput.addEventListener('keyup', toggleSaveButtonState);
 ideaGrid.addEventListener('click', function(event) {
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event) 
+  }else if (event.target.className === 'favorite-button') {
+    favoriteUserIdeaCard(event)
   }
 }) 
 
@@ -31,6 +33,16 @@ ideaGrid.addEventListener('click', function(event) {
 
 
 // functions
+
+function favoriteUserIdeaCard(event) {
+ for (var i = 0; i < userIdeas.length; i++) {
+  if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
+    userIdeas[i].isFavorite = true;
+    event.target.closest('.user-idea-card').classList.toggle('.active');
+    console.log(userIdeas[i])
+    }
+  }
+}
 
 function deleteUserIdeaCard(event) {
   for(var i = 0; i < userIdeas.length; i++) {
@@ -54,6 +66,7 @@ function createUserObject(titleInput, bodyInput) {
     title: titleInput,
     body: bodyInput,
     id: Date.now(),
+    isFavorite: false,
     }
 }
 
@@ -68,7 +81,7 @@ function addUserIdeaCard(){
         ideaGrid.innerHTML +=
             `<article class='user-idea-card' id='${userIdeas[i].id}'>
             <header>
-              <button class="favorite-button">star</button>
+              <button class="favorite-button"></button>
               <button class="delete-button">Delete</button>
             </header>
             <h2>${userIdeas[i].title}</h2>
