@@ -38,7 +38,7 @@ function favoriteUserIdeaCard(event) {
  for (var i = 0; i < userIdeas.length; i++) {
   if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
     userIdeas[i].isFavorite = true;
-    event.target.closest('.user-idea-card').classList.toggle('.active');
+    event.target.closest('.favorite-button').classList.toggle('active');
     console.log(userIdeas[i])
     }
   }
@@ -81,7 +81,7 @@ function addUserIdeaCard(){
             `<article class='user-idea-card' id='${userIdeas[i].id}'>
             <header>
               <button class="favorite-button"></button>
-              <button class="delete-button">Delete</button>
+              <button class="delete-button"></button>
             </header>
             <h2>${userIdeas[i].title}</h2>
             <h4>${userIdeas[i].body}</h4></article>`
