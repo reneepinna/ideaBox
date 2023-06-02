@@ -93,7 +93,7 @@ label {
 header{
   display:block;
   background-color: #1F1F3C;
-  height: 8vh;
+  height: 6.3vh;
 }
 
 .user-idea-card {
@@ -147,7 +147,14 @@ header{
   background-image: url("assets/star.svg");
   background-color: #1f1f3c;
   border: 0px;
-  height: 30px;
-  width: 30px;
+  height: 55px;
+  width: 55px;
   background-size: cover;
+}
+
+.active {
+  background-image: url("assets/star-active.svg")
+
+
+ 
 }

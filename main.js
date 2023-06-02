@@ -38,7 +38,7 @@ function favoriteUserIdeaCard(event) {
  for (var i = 0; i < userIdeas.length; i++) {
   if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
     userIdeas[i].isFavorite = true;
-    event.target.closest('.user-idea-card').classList.toggle('.active');
+    event.target.closest('.favorite-button').classList.toggle('active');
     console.log(userIdeas[i])
     }
   }
