@@ -60,7 +60,6 @@ function saveUserInput() {
     console.log(userIdeas); 
 }
 
-
 function createUserObject(titleInput, bodyInput) {
     return {
     title: titleInput,
