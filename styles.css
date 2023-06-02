@@ -91,11 +91,9 @@ label {
 }
 
 header{
-  display:flex;
+  display: flex;
   background-color: #1F1F3C;
   height: 6.3vh;
- 
-
   overflow: hidden;
 }
 
@@ -150,7 +148,7 @@ header{
   background-image: url("assets/star.svg");
   background-color: #1f1f3c;
   border: 0px;
-  height: 55px;
+  height: 57px;
   width: 55px;
   background-size: cover;
 }
@@ -161,12 +159,11 @@ header{
 
 .delete-button {
   border: 0;
-  background-image: url("assets/delete.svg");
+  background-image: url("assets/menu-close.svg");
   margin-left: 130px;
-  height: 90px;
-  width: 70px; 
-  margin-bottom: 25px;
-  background-color:#1F1F3C;
-  
-  
+  height: 50px;
+  width: 50px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color:#1F1F3C;  
 }
