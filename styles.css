@@ -91,9 +91,10 @@ label {
 }
 
 header{
-  display:block;
+  display: flex;
   background-color: #1F1F3C;
-  height: 8vh;
+  height: 6.3vh;
+  overflow: hidden;
 }
 
 .user-idea-card {
@@ -147,11 +148,25 @@ header{
   background-image: url("assets/star.svg");
   background-color: #1f1f3c;
   border: 0px;
-  height: 30px;
-  width: 30px;
+  height: 57px;
+  width: 55px;
   background-size: cover;
 }
 
+.active {
+  background-image: url("assets/star-active.svg");
+}
+
+.delete-button {
+  border: 0;
+  background-image: url("assets/menu-close.svg");
+  margin-left: 130px;
+  height: 50px;
+  width: 50px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color:#1F1F3C;  
+}
 .hidden {
   display: none;
 }
