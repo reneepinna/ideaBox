@@ -113,12 +113,19 @@ header{
   font-size: 30px;
   font-weight: 200;
   text-align: center;
-  padding: 30px 10px 5px 10px;
+  /* border: solid 3px red;  */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .user-idea-card h2 {
   font-weight: 500;
-  margin-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.user-idea-card-h4{
+  padding-top: 0px;
 }
 
 .save-button {
