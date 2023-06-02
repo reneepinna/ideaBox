@@ -167,3 +167,6 @@ header{
   margin-bottom: 10px;
   background-color:#1F1F3C;  
 }
+.hidden {
+  display: none;
+}
