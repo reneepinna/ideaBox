@@ -151,3 +151,7 @@ header{
   width: 30px;
   background-size: cover;
 }
+
+.hidden {
+  display: none;
+}

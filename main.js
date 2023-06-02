@@ -4,17 +4,19 @@ var titleInput = document.querySelector('#title');
 var bodyInput = document.querySelector('#body');
 var saveButton = document.querySelector('.save-button');
 var ideaGrid = document.querySelector('.user-ideas-grid');
+var showStarredButton = document.querySelector('.show-starred-button');
 
 // global variables
 
 var userIdeas = [];
+var favoriteUserIdeas = [];
 
 // event listeners
 
 saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
-    addUserIdeaCard(event);
+    displayIdeaCards(userIdeas);
     toggleSaveButtonState();
   }
 
@@ -27,9 +29,12 @@ ideaGrid.addEventListener('click', function(event) {
   }else if (event.target.className === 'favorite-button') {
     favoriteUserIdeaCard(event)
   }
-}) 
+});
 
-  
+showStarredButton.addEventListener('click', function(event) {
+  console.log('you clicked me');
+  displayIdeaCards(favoriteUserIdeas);
+});
 
 
 // functions
@@ -38,6 +43,7 @@ function favoriteUserIdeaCard(event) {
  for (var i = 0; i < userIdeas.length; i++) {
   if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
     userIdeas[i].isFavorite = true;
+    favoriteUserIdeas.push(userIdeas[i]);
     event.target.closest('.user-idea-card').classList.toggle('.active');
     console.log(userIdeas[i])
     }
@@ -51,7 +57,7 @@ function deleteUserIdeaCard(event) {
     } 
     console.log(event.target.closest('.user-idea-card').id)
   }
-  addUserIdeaCard();
+  displayIdeaCards();
 }
 
 function saveUserInput() {
@@ -74,17 +80,17 @@ function clearUserInput(){
     bodyInput.value='';
 }
 
-function addUserIdeaCard(){
+function displayIdeaCards(arrayOfIdeas){
   ideaGrid.innerHTML = '';
-    for (var i = 0; i < userIdeas.length; i++) {
+    for (var i = 0; i < arrayOfIdeas.length; i++) {
         ideaGrid.innerHTML +=
-            `<article class='user-idea-card' id='${userIdeas[i].id}'>
+            `<article class='user-idea-card' id='${arrayOfIdeas[i].id}'>
             <header>
               <button class="favorite-button"></button>
               <button class="delete-button">Delete</button>
             </header>
-            <h2>${userIdeas[i].title}</h2>
-            <h4>${userIdeas[i].body}</h4></article>`
+            <h2>${arrayOfIdeas[i].title}</h2>
+            <h4>${arrayOfIdeas[i].body}</h4></article>`
     }
      clearUserInput()
 }
@@ -96,3 +102,4 @@ function toggleSaveButtonState() {
     saveButton.classList.remove('inputs-filled');
   }
 }
+
