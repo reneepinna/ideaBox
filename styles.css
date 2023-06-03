@@ -172,8 +172,9 @@ header{
   margin-top: 23px;
   background-color: #A8AAD2;
   height: 70px;
-  width: 300px;
-  font-size: 27px;
+  width: 255px;
+  font-size: 20px;
   font-weight: 600;
   color:#1F1F3C;
+  border: 0;
 }
