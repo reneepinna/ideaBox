@@ -1,6 +1,6 @@
 /* Colors:
 Dark Purple: #1F1F3C
-Medium Purple: #A8AAD2
+Medium Purple: 
 Light Purple: #EAEAF4
 White: #FFFFFF */
 
@@ -169,4 +169,14 @@ header{
 }
 .hidden {
   display: none;
+}
+
+.show-starred-button {
+  margin-top: 23px;
+  background-color: #A8AAD2;
+  height: 70px;
+  width: 300px;
+  font-size: 27px;
+  font-weight: 600;
+  color:#1F1F3C;
 }
