@@ -24,15 +24,15 @@ saveButton.addEventListener('click', function(event) {
 bodyInput.addEventListener('keyup', toggleSaveButtonState);
 titleInput.addEventListener('keyup', toggleSaveButtonState);
 ideaGrid.addEventListener('click', function(event) {
+  console.log(event.target.className)
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event) 
-  }else if (event.target.className === 'favorite-button') {
+  }else if (event.target.className.includes('favorite-button')) {
     favoriteUserIdeaCard(event)
   }
 });
 
 showStarredButton.addEventListener('click', function(event) {
-  console.log('you clicked me');
   displayIdeaCards(favoriteUserIdeas);
 });
 
@@ -42,11 +42,18 @@ showStarredButton.addEventListener('click', function(event) {
 function favoriteUserIdeaCard(event) {
  for (var i = 0; i < userIdeas.length; i++) {
   if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
-    userIdeas[i].isFavorite = true;
-    favoriteUserIdeas.push(userIdeas[i]);
-    event.target.closest('.favorite-button').classList.toggle('active');
-    console.log(userIdeas[i])
+    if  (userIdeas[i].isFavorite) {
+      userIdeas[i].isFavorite = false;
+      favoriteUserIdeas.splice( i, 1);
+    } else {
+      userIdeas[i].isFavorite = true;
+      favoriteUserIdeas.push(userIdeas[i]);
     }
+    
+    event.target.closest('.favorite-button').classList.toggle('active');
+    
+    console.log(userIdeas[i])
+  }
   }
 }
 
