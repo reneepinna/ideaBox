@@ -16,7 +16,7 @@ var favoriteUserIdeas = [];
 saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
-    displayAllIdeaCards();
+    displayIdeaCards(userIdeas);
     toggleSaveButtonState();
   }
 
@@ -33,7 +33,7 @@ ideaGrid.addEventListener('click', function(event) {
 });
 
 showStarredButton.addEventListener('click', function() {
-  displayFavoriteIdeaCards();
+  displayIdeaCards(favoriteUserIdeaCard);
 });
 
 // functions
@@ -50,6 +50,7 @@ function favoriteUserIdeaCard(event) {
       userIdeas[i].isFavorite = true;
       favoriteUserIdeas.push(userIdeas[i]);
       event.target.closest('.favorite-button').classList.add('active');
+      userIdeas[i].class = " active"
 
     }
         
@@ -59,13 +60,18 @@ function favoriteUserIdeaCard(event) {
 }
 
 function deleteUserIdeaCard(event) {
-  for(var i = 0; i < userIdeas.length; i++) {
-    if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
+  for (var i = 0; i < userIdeas.length; i++) {
+    if (parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
       userIdeas.splice(i, 1);
     } 
-    console.log(event.target.closest('.user-idea-card').id)
   }
-  displayAllIdeaCards();
+
+  for (var i = 0; i < favoriteUserIdeaCard.length; i++){
+    if(parseInt(event.target.closest('.user-idea-card').id) === favoriteUserIdeas[i].id) {
+      favoriteUserIdeas.splice(i, 1);
+    } 
+  }
+  displayIdeaCards(userIdeas);
 }
 
 function saveUserInput() {
@@ -80,6 +86,7 @@ function createUserObject(titleInput, bodyInput) {
     body: bodyInput,
     id: Date.now(),
     isFavorite: false,
+    class: ''
     }
 }
 
@@ -88,36 +95,20 @@ function clearUserInput(){
     bodyInput.value='';
 }
 
-function displayAllIdeaCards(){
+function displayIdeaCards(ideas){
   ideaGrid.innerHTML = '';
-    for (var i = 0; i < userIdeas.length; i++) {
+    for (var i = 0; i < ideas.length; i++) {
         ideaGrid.innerHTML +=
-            `<article class='user-idea-card' id='${userIdeas[i].id}'>
+            `<article class='user-idea-card' id='${ideas[i].id}'>
             <header>
-              <button class="favorite-button"></button>
+              <button class="favorite-button${ideas[i].class}"></button>
               <button class="delete-button"></button>
             </header>
-            <h2>${userIdeas[i].title}</h2>
-            <h4>${userIdeas[i].body}</h4></article>`
+            <h2>${ideas[i].title}</h2>
+            <h4>${ideas[i].body}</h4></article>`
     }
 
      clearUserInput()
-}
-
-function displayFavoriteIdeaCards() {
-  ideaGrid.innerHTML = '';
-  for (var i = 0; i < favoriteUserIdeas.length; i++) {
-      ideaGrid.innerHTML +=
-          `<article class='user-idea-card' id='${favoriteUserIdeas[i].id}'>
-          <header>
-            <button class="favorite-button active"></button>
-            <button class="delete-button"></button>
-          </header>
-          <h2>${favoriteUserIdeas[i].title}</h2>
-          <h4>${favoriteUserIdeas[i].body}</h4></article>`
-  }
-
-   clearUserInput()
 }
 
 function toggleSaveButtonState() {
