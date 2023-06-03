@@ -42,9 +42,11 @@ toggleFavoriteViewButton.addEventListener('click', function() {
   if (favoriteView) {
     favoriteView = false;
     determineView();
+    toggleFavoriteViewButton.innerText = "Show Starred Ideas";
   } else {
     favoriteView = true;
     determineView();
+    toggleFavoriteViewButton.innerText = "Show All Ideas";
   }
 });
 
