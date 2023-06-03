@@ -16,7 +16,7 @@ var favoriteUserIdeas = [];
 saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
-    displayIdeaCards(userIdeas);
+    displayAllIdeaCards();
     toggleSaveButtonState();
   }
 
@@ -32,10 +32,9 @@ ideaGrid.addEventListener('click', function(event) {
   }
 });
 
-showStarredButton.addEventListener('click', function(event) {
-  displayIdeaCards(favoriteUserIdeas);
+showStarredButton.addEventListener('click', function() {
+  displayFavoriteIdeaCards();
 });
-
 
 // functions
 
@@ -45,13 +44,15 @@ function favoriteUserIdeaCard(event) {
     if  (userIdeas[i].isFavorite) {
       userIdeas[i].isFavorite = false;
       favoriteUserIdeas.splice( i, 1);
+      event.target.closest('.favorite-button').classList.remove('active');
+
     } else {
       userIdeas[i].isFavorite = true;
       favoriteUserIdeas.push(userIdeas[i]);
+      event.target.closest('.favorite-button').classList.add('active');
+
     }
-    
-    event.target.closest('.favorite-button').classList.toggle('active');
-    
+        
     console.log(userIdeas[i])
   }
   }
@@ -64,7 +65,7 @@ function deleteUserIdeaCard(event) {
     } 
     console.log(event.target.closest('.user-idea-card').id)
   }
-  displayIdeaCards();
+  displayAllIdeaCards();
 }
 
 function saveUserInput() {
@@ -87,19 +88,36 @@ function clearUserInput(){
     bodyInput.value='';
 }
 
-function displayIdeaCards(arrayOfIdeas){
+function displayAllIdeaCards(){
   ideaGrid.innerHTML = '';
-    for (var i = 0; i < arrayOfIdeas.length; i++) {
+    for (var i = 0; i < userIdeas.length; i++) {
         ideaGrid.innerHTML +=
-            `<article class='user-idea-card' id='${arrayOfIdeas[i].id}'>
+            `<article class='user-idea-card' id='${userIdeas[i].id}'>
             <header>
               <button class="favorite-button"></button>
               <button class="delete-button"></button>
             </header>
-            <h2>${arrayOfIdeas[i].title}</h2>
-            <h4>${arrayOfIdeas[i].body}</h4></article>`
+            <h2>${userIdeas[i].title}</h2>
+            <h4>${userIdeas[i].body}</h4></article>`
     }
+
      clearUserInput()
+}
+
+function displayFavoriteIdeaCards() {
+  ideaGrid.innerHTML = '';
+  for (var i = 0; i < favoriteUserIdeas.length; i++) {
+      ideaGrid.innerHTML +=
+          `<article class='user-idea-card' id='${favoriteUserIdeas[i].id}'>
+          <header>
+            <button class="favorite-button active"></button>
+            <button class="delete-button"></button>
+          </header>
+          <h2>${favoriteUserIdeas[i].title}</h2>
+          <h4>${favoriteUserIdeas[i].body}</h4></article>`
+  }
+
+   clearUserInput()
 }
 
 function toggleSaveButtonState() {
