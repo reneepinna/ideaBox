@@ -9,6 +9,7 @@ var toggleFavoriteViewButton = document.querySelector('.show-starred-button');
 // global variables
 
 var userIdeas = []; //save ALL user ideas
+var favoriteView = false;
 
 // event listeners
 
@@ -16,8 +17,7 @@ saveButton.addEventListener('click', function(event) {
 // when the save button is clicked, IF title and input are filled
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event); // creates a userIdeaObject and pushes it into userIdeas array (title, body, date.now id, isFavorite = false, class = '')
-    // displayIdeaCards(userIdeas); // display ALL of the userIdeas array
-    displayIdeaCards();
+    determineView();
     clearUserInput() // clears the user input
     toggleSaveButtonState(); // The button is a lighter color and not a pointer while inputs are empty
   }
@@ -38,42 +38,19 @@ ideaGrid.addEventListener('click', function(event) {
 });
 
 toggleFavoriteViewButton.addEventListener('click', function() {
-  // if (favoriteView) {
-  //   favoriteView = false;
-  //   displayIdeaCards(userIdeas);
-  // } else {
-  //   favoriteView = true;
-  //   displayIdeaCards(favoriteUserIdeas);
-  // }
+
+  if (favoriteView) {
+    favoriteView = false;
+    determineView();
+  } else {
+    favoriteView = true;
+    determineView();
+  }
 });
 
 // functions
 
 function favoriteUserIdeaCard(event) {
-//  for (var i = 0; i < userIdeas.length; i++) { 
-//   if(parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) { //find out what we clicked on
-
-    // console.log("the useridea isFavorite", userIdeas[i].isFavorite);
-    // if  (userIdeas[i].isFavorite) { //if the card is already favorites and user clicks the star button
-
-    //   removeIdeaFromFavorites(userIdeas[i].id);
-
-    //   event.target.closest('.favorite-button').classList.remove('active'); //it should show a white star
-    //   userIdeas[i].class = ''; //the class for interpolation should be changed so it will always render correctly
-      
-    // } else if (!userIdeas[i].isFavorite){
-
-    //   addIdeaToFavorites(userIdeas[i].id)
-
-    //   event.target.closest('.favorite-button').classList.add('active'); // it should show with an orange star
-    //   userIdeas[i].class = " active"; // it should have the active class for interpolation for rendering
-
-    // } else {
-  //   //   console.log("this conditional failed");
-  //   }
-  // }
-  // }
-
   for (var i = 0; i < userIdeas.length; i++) {
     console.log("entering the for loop");
     if (parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
@@ -83,43 +60,18 @@ function favoriteUserIdeaCard(event) {
         userIdeas[i].isFavorite = false;
         userIdeas[i].class = '';
 
-        displayIdeaCards();
+        determineView();
         
       } else {
 
         userIdeas[i].isFavorite = true;
         userIdeas[i].class = " active";
        
-        displayIdeaCards();
+        determineView();
       }
     }
   }
 }
-
-// function removeIdeaFromFavorites(ideasId) {
-//   //console.log("in the remove idea from favorite buttons")
-//   for (var i = 0; i < favoriteUserIdeas.length; i++) {
-//     if (favoriteUserIdeas[i].id === ideasId) {
-//       userIdeas[i].isFavorite = false; //it should be unfavorited
-//       favoriteUserIdeas.splice( i, 1); //it should be removed from the favorite user ideas array
-//       //console.log("i am in the for loop in remove function", userIdeas[i])
-//     }
-//   }
-// }
-
-// function addIdeaToFavorites(ideasID) {
-//   console.log ("in the add idea to favorites function")
-
-//   for (var i = 0; i < userIdeas.length; i++) {
-//     if (userIdeas[i].id === ideasID) {
-
-//       userIdeas[i].isFavorite = true; //if it is not favorited it should be favorited
-//       favoriteUserIdeas.push(userIdeas[i]); //it should be added to the favorite user ideas array
-//       console.log("i am in the loop in add favorites fucntion", favoriteUserIdeas)
-//     }
-//   }
-
-// }
 
 function deleteUserIdeaCard(event) { //possible rename???
   for (var i = 0; i < userIdeas.length; i++) {
@@ -127,11 +79,7 @@ function deleteUserIdeaCard(event) { //possible rename???
       userIdeas.splice(i, 1);
     } 
   }
-  //if (favoriteView){
-    //displayIdeaCards(favoriteUserIdeas)
-  // else
-  // displayIdeaCards(userIdeas);
-  displayIdeaCards();
+  determineView();
 }
 
 function saveUserInput() {
@@ -155,9 +103,8 @@ function clearUserInput(){
     bodyInput.value='';
 }
 
-function displayIdeaCards(){
-  ideaGrid.innerHTML = '';
-    for (var i = 0; i < userIdeas.length; i++) {
+function renderCards(i){  
+  console.log(i)
         ideaGrid.innerHTML +=
             `<article class='user-idea-card' id='${userIdeas[i].id}'>
             <header>
@@ -166,7 +113,26 @@ function displayIdeaCards(){
             </header>
             <h2>${userIdeas[i].title}</h2>
             <h4>${userIdeas[i].body}</h4></article>`
+}
+
+function determineView() {
+  ideaGrid.innerHTML = '';
+
+  if (favoriteView) {
+    console.log("you actually made it to the fav veiw")
+    for (var i = 0; i < userIdeas.length; i++) {
+      console.log("you are in the fav view render for loop")
+      if(userIdeas[i].isFavorite){
+        renderCards(i);
+      }
     }
+  } else {
+    console.log("you are in the main view render for loop")
+
+    for (var i = 0; i < userIdeas.length; i++) {
+      renderCards(i);
+    }
+  }
 }
 
 function toggleSaveButtonState() {
