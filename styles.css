@@ -76,9 +76,6 @@ label {
 .bottom-box {
   background-color: #EAEAF4;
   height: 55%;
-  width: 100%;
-  /* display: flex;
-  justify-content: space-between; */
   padding: 20px;
   overflow-y: scroll;
 }
