@@ -76,9 +76,6 @@ label {
 .bottom-box {
   background-color: #EAEAF4;
   height: 55%;
-  width: 100%;
-  /* display: flex;
-  justify-content: space-between; */
   padding: 20px;
   overflow-y: scroll;
 }
@@ -135,7 +132,7 @@ header{
   border-width: 0px;
   font-weight: 400;
   font-size: 4vh;
-  background-color:#37373e;
+  background-color:grey;
   color:#EAEAF4;
 }
 
