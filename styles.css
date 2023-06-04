@@ -36,7 +36,7 @@ section {
   align-items: flex-end;
   justify-content: space-evenly;
   background-color: #A8AAD2;
-  height: 45%;
+  height: 50%;
   width: 100%;
 }
 
@@ -70,7 +70,7 @@ label {
   display: flex;
   justify-content: space-around;
   background-color: #EAEAF4;
-  height: 55%;
+  height: 50%;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -99,8 +99,8 @@ header{
   background: #FFFFFF;
   color: #1F1F3C;
   border: #1F1F3C solid 3px;
-  height: 290px;
-  width: 250px;
+  height: 300px;
+  width: 275px;
   overflow: auto;
 }
 
@@ -164,7 +164,7 @@ header{
 .delete-button {
   border: 0;
   background-image: url("assets/menu-close.svg");
-  margin-left: 130px;
+  margin-left: 160px;
   height: 45px;
   width: 45px; 
   margin-top: 5px;
