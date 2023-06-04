@@ -16,7 +16,7 @@ var favoriteView = false;
 saveButton.addEventListener('click', function(event) {
   if (titleInput.value && bodyInput.value) {
     saveUserInput(event);
-    determineView();
+    renderView();
     clearUserInput();
     toggleSaveButtonState();
   }
@@ -37,7 +37,7 @@ ideaGrid.addEventListener('click', function(event) {
 
 toggleFavoriteViewButton.addEventListener('click', function() {
   changeView();
-  determineView(); 
+  renderView(); 
 });
 
 // functions
@@ -56,7 +56,7 @@ function favoriteUserIdeaCard(event) {
   for (var i = 0; i < userIdeas.length; i++) {
     if (parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
       toggleFavoriteStatus(i);
-      determineView();
+      renderView();
     }
   }
 }
@@ -77,7 +77,7 @@ function deleteUserIdeaCard(event) {
       userIdeas.splice(i, 1);
     } 
   }
-  determineView();
+  renderView();
 }
 
 function saveUserInput() {
@@ -100,7 +100,7 @@ function clearUserInput(){
   bodyInput.value='';
 }
 
-function renderCards(i){  
+function renderCard(i){  
   ideaGrid.innerHTML +=
     `<article class='user-idea-card' id='${userIdeas[i].id}'>
       <header>
@@ -112,17 +112,17 @@ function renderCards(i){
     </article>`
 }
 
-function determineView() {
+function renderView() {
   ideaGrid.innerHTML = '';
   if (favoriteView) {
     for (var i = 0; i < userIdeas.length; i++) {
       if (userIdeas[i].isFavorite) {
-        renderCards(i);
+        renderCard(i);
       }
     }
   } else {
     for (var i = 0; i < userIdeas.length; i++) {
-      renderCards(i);
+      renderCard(i);
     }
   }
 }
