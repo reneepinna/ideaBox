@@ -27,41 +27,47 @@ bodyInput.addEventListener('keyup', toggleSaveButtonState);
 titleInput.addEventListener('keyup', toggleSaveButtonState);
 
 ideaGrid.addEventListener('click', function(event) {
+ 
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event);
-  }else if (event.target.className.includes('favorite-button')) {
-    console.log("You clicked a favorite button");
+  } else if (event.target.className.includes('favorite-button')) {
     favoriteUserIdeaCard(event);
   }
 });
 
 toggleFavoriteViewButton.addEventListener('click', function() {
-  if (favoriteView) {
-    favoriteView = false;
-    determineView();
-    toggleFavoriteViewButton.innerText = "Show Starred Ideas";
-  } else {
-    favoriteView = true;
-    determineView();
-    toggleFavoriteViewButton.innerText = "Show All Ideas";
-  }
+  changeView();
+  determineView(); 
 });
 
 // functions
 
+function changeView() {
+  if (favoriteView) {
+    favoriteView = false; 
+    toggleFavoriteViewButton.innerText = "Show Starred Ideas";
+  } else {
+    favoriteView = true;
+    toggleFavoriteViewButton.innerText = "Show All Ideas";
+  }
+}
+
 function favoriteUserIdeaCard(event) {
   for (var i = 0; i < userIdeas.length; i++) {
     if (parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
-      if (userIdeas[i].isFavorite) {
-        userIdeas[i].isFavorite = false;
-        userIdeas[i].class = '';
-        determineView();
-      } else {
-        userIdeas[i].isFavorite = true;
-        userIdeas[i].class = " active";
-        determineView();
-      }
+      toggleFavoriteStatus(i);
+      determineView();
     }
+  }
+}
+
+function toggleFavoriteStatus (i) {
+  if (userIdeas[i].isFavorite) {
+    userIdeas[i].isFavorite = false;
+    userIdeas[i].class = '';
+  } else {
+    userIdeas[i].isFavorite = true;
+    userIdeas[i].class = " active";
   }
 }
 
