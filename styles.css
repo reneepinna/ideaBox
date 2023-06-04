@@ -1,9 +1,3 @@
-/* Colors:
-Dark Purple: #1F1F3C
-Medium Purple: 
-Light Purple: #EAEAF4
-White: #FFFFFF */
-
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0px;
@@ -14,7 +8,6 @@ main {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  /* overflow-y: scroll; */
 }
 
 aside {
@@ -80,6 +73,10 @@ label {
   overflow-y: scroll;
 }
 
+.bottom-box::-webkit-scrollbar{
+  display: none;
+}
+
 .user-ideas-grid{
   display: grid;
   grid-template-columns:repeat(3,1fr);
@@ -92,6 +89,8 @@ header{
   background-color: #1F1F3C;
   height: 6.3vh;
   overflow: hidden;
+  align-items: center;
+  padding-left: 5px;
 }
 
 .user-idea-card {
@@ -101,6 +100,10 @@ header{
   height: 290px;
   width: 250px;
   overflow: auto;
+}
+
+.user-idea-card::-webkit-scrollbar{
+  display: none;
 }
 
 .user-idea-card h2,
@@ -132,13 +135,15 @@ header{
   border-width: 0px;
   font-weight: 400;
   font-size: 4vh;
-  background-color:grey;
-  color:#EAEAF4;
+  cursor: not-allowed;
+  background-color: #C9CAE3;
+  color: rgb(107, 107, 107);
 }
 
 .inputs-filled {
   background-color:#1F1F3C;
   cursor: pointer;
+  color:#EAEAF4;
 }
 
 .favorite-button {
@@ -158,12 +163,13 @@ header{
   border: 0;
   background-image: url("assets/menu-close.svg");
   margin-left: 130px;
-  height: 50px;
-  width: 50px; 
+  height: 45px;
+  width: 45px; 
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   background-color:#1F1F3C;  
 }
+
 .hidden {
   display: none;
 }
