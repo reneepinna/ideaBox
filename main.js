@@ -27,6 +27,7 @@ bodyInput.addEventListener('keyup', toggleSaveButtonState);
 titleInput.addEventListener('keyup', toggleSaveButtonState);
 
 ideaGrid.addEventListener('click', function(event) {
+ 
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event);
   } else if (event.target.className.includes('favorite-button')) {
@@ -54,16 +55,19 @@ function changeView() {
 function favoriteUserIdeaCard(event) {
   for (var i = 0; i < userIdeas.length; i++) {
     if (parseInt(event.target.closest('.user-idea-card').id) === userIdeas[i].id) {
-      if (userIdeas[i].isFavorite) {
-        userIdeas[i].isFavorite = false;
-        userIdeas[i].class = '';
-        determineView();
-      } else {
-        userIdeas[i].isFavorite = true;
-        userIdeas[i].class = " active";
-        determineView();
-      }
+      toggleFavoriteStatus(i);
+      determineView();
     }
+  }
+}
+
+function toggleFavoriteStatus (i) {
+  if (userIdeas[i].isFavorite) {
+    userIdeas[i].isFavorite = false;
+    userIdeas[i].class = '';
+  } else {
+    userIdeas[i].isFavorite = true;
+    userIdeas[i].class = " active";
   }
 }
 
