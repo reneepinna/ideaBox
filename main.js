@@ -114,15 +114,13 @@ function renderCard(i){
 
 function renderView() {
   ideaGrid.innerHTML = '';
-  if (favoriteView) {
-    for (var i = 0; i < userIdeas.length; i++) {
-      if (userIdeas[i].isFavorite) {
+  for (var i = 0; i < userIdeas.length; i++) {
+    if (!favoriteView) { 
+      renderCard(i);
+    } else {
+      if(userIdeas[i].isFavorite) {
         renderCard(i);
       }
-    }
-  } else {
-    for (var i = 0; i < userIdeas.length; i++) {
-      renderCard(i);
     }
   }
 }
