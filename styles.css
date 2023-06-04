@@ -50,7 +50,7 @@ div {
 }
 
 input {
-  margin-right: 20vh;
+  margin-right: 15vh;
   margin-left: 1vh;
   border: #1F1F3C solid 3px;
   height: 7vh;
@@ -67,6 +67,8 @@ label {
 }
 
 .bottom-box {
+  display: flex;
+  justify-content: space-around;
   background-color: #EAEAF4;
   height: 55%;
   padding: 20px;
@@ -80,7 +82,7 @@ label {
 .user-ideas-grid{
   display: grid;
   grid-template-columns:repeat(3,1fr);
-  grid-gap: 20px;
+  grid-gap: 100px;
   padding: 20px;
 }
 
@@ -129,7 +131,7 @@ header{
 }
 
 .save-button {
-  margin-right: 20vh;
+  margin-right: 15vh;
   height: 10vh;
   width: 110vh;
   border-width: 0px;
