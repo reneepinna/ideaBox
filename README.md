@@ -16,7 +16,7 @@ To clone down this repository to your local machine:
 
 ### Preview of App:
 
-<img width="1440" alt="Preview of IdeaBox App" src="https://github.com/turingschool-examples/hang-in-there-boilerplate/assets/61986277/29c9db65-8c6d-4f77-887c-f30c278c4f0a">
+<img width="1440" alt="Preview of IdeaBox App" src="https://github.com/Jwensloff/pairing_2/assets/61986277/09a681cd-7ec5-4721-aae7-a77deb0db51f">
 
 ### Context:
 
