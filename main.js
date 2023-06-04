@@ -13,9 +13,9 @@ var favoriteView = false;
 
 // event listeners
 
-saveButton.addEventListener('click', function(event) {
+saveButton.addEventListener('click', function() {
   if (titleInput.value && bodyInput.value) {
-    saveUserInput(event);
+    saveUserInput();
     renderView();
     clearUserInput();
     toggleSaveButtonState();
@@ -27,7 +27,6 @@ bodyInput.addEventListener('keyup', toggleSaveButtonState);
 titleInput.addEventListener('keyup', toggleSaveButtonState);
 
 ideaGrid.addEventListener('click', function(event) {
- 
   if (event.target.className === 'delete-button') {
     deleteUserIdeaCard(event);
   } else if (event.target.className.includes('favorite-button')) {
@@ -61,7 +60,7 @@ function favoriteUserIdeaCard(event) {
   }
 }
 
-function toggleFavoriteStatus (i) {
+function toggleFavoriteStatus(i) {
   if (userIdeas[i].isFavorite) {
     userIdeas[i].isFavorite = false;
     userIdeas[i].class = '';
