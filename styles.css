@@ -36,7 +36,7 @@ section {
   align-items: flex-end;
   justify-content: space-evenly;
   background-color: #A8AAD2;
-  height: 45%;
+  height: 50%;
   width: 100%;
 }
 
@@ -50,7 +50,7 @@ div {
 }
 
 input {
-  margin-right: 20vh;
+  margin-right: 15vh;
   margin-left: 1vh;
   border: #1F1F3C solid 3px;
   height: 7vh;
@@ -67,8 +67,10 @@ label {
 }
 
 .bottom-box {
+  display: flex;
+  justify-content: space-around;
   background-color: #EAEAF4;
-  height: 55%;
+  height: 50%;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -80,7 +82,7 @@ label {
 .user-ideas-grid{
   display: grid;
   grid-template-columns:repeat(3,1fr);
-  grid-gap: 20px;
+  grid-gap: 100px;
   padding: 20px;
 }
 
@@ -97,8 +99,8 @@ header{
   background: #FFFFFF;
   color: #1F1F3C;
   border: #1F1F3C solid 3px;
-  height: 290px;
-  width: 250px;
+  height: 300px;
+  width: 275px;
   overflow: auto;
 }
 
@@ -129,7 +131,7 @@ header{
 }
 
 .save-button {
-  margin-right: 20vh;
+  margin-right: 15vh;
   height: 10vh;
   width: 110vh;
   border-width: 0px;
@@ -162,7 +164,7 @@ header{
 .delete-button {
   border: 0;
   background-image: url("assets/menu-close.svg");
-  margin-left: 130px;
+  margin-left: 160px;
   height: 45px;
   width: 45px; 
   margin-top: 5px;
