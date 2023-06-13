@@ -17,6 +17,7 @@ To clone down this repository to your local machine:
 ### Preview of App:
 
 <img width="1428" alt="Preview of the application" src="https://user-images.githubusercontent.com/61986277/243403912-7cc3cce8-beee-442b-a9e7-36b06d7514e3.png">
+
 ### Context:
 
 The IdeaBox application is a group project that was assigned in the fourth week of Mod 1 at the Turing School of Software and Design. Students are about 4 weeks into the program at this time. The alloted time to complete this project was 6 days.
