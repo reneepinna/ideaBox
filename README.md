@@ -1,10 +1,16 @@
 # Ideabox
 
-### Abstract
+🎊 [Check it out!](https://reneepinna.github.io/ideaBox/) 🎊
+
+### 💡 Abstract
 
 The project builds a website where users can create, save, favorite and delete idea cards. There are two input fields one for the title and the other for the body. When the user clicks save, a card is generated lower down on the page with those inputs creating a card with that information. In the header of the card there is a large "X" for the delete button and a star icon so the user can add the card to their favorites. The user can click the "Show Starred Ideas" button to see their favorite idea cards. That button can toggle into the "Show All Ideas" button and when clicked it will show all of the idea cards.
 
-### Installation instructions
+### 📷 Preview of App:
+
+<img width="1428" alt="Preview of the application" src="https://user-images.githubusercontent.com/61986277/243403912-7cc3cce8-beee-442b-a9e7-36b06d7514e3.png">
+
+### 💻 Installation instructions
 
 To clone down this repository to your local machine:
 
@@ -14,22 +20,18 @@ To clone down this repository to your local machine:
 * Open the repository in your text editor
 * You will have access to the HTML, CSS, and JavaScript files
 
-### Preview of App:
-
-<img width="1428" alt="Preview of the application" src="https://user-images.githubusercontent.com/61986277/243403912-7cc3cce8-beee-442b-a9e7-36b06d7514e3.png">
-
-### Context:
+### 🍎 Context:
 
 The IdeaBox application is a group project that was assigned in the fourth week of Mod 1 at the Turing School of Software and Design. Students are about 4 weeks into the program at this time. The alloted time to complete this project was 6 days.
 
-### Contributors:
+### 🧠 Contributors:
 
 - Zen McMillan - https://github.com/zenmcmillan
 - Renee Pinna - https://github.com/reneepinna
 - Jocelyn Wensloff - https://github.com/Jwensloff
 - Adrian Zabolitzki - https://github.com/ganuza
 
-### Learning Goals:
+### 🖇️ Learning Goals:
 
 * Gain an understanding of how to write clean HTML and CSS to match a provided comp.
 
@@ -40,7 +42,7 @@ The IdeaBox application is a group project that was assigned in the fourth week 
 * Craft code with clean style, using small functions that show trends toward DRYness, SRP, and purity.
 
 
-### Wins 
+### 🎆 Wins 
 
 * Completing the project on time with a day to spare
 
@@ -50,7 +52,7 @@ The IdeaBox application is a group project that was assigned in the fourth week 
 
 * We were able to create a scroll feature for the page and the cards while also making the scroll bar invisible.
 
-### Challenges:
+### 🔥 Challenges:
 
 * Being stuck on the logic that affected functionality when toggling between pages.
 
